@@ -5,10 +5,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export default defineNuxtConfig({
   srcDir: 'app/',
-  serverDir: resolve(__dirname, 'server'),
   dir: {
     public: resolve(__dirname, 'public')
   },
+  nitro: { preset: 'static', prerender: { routes: ['/home', '/about', '/project', '/projectDetail', '/contact'] } },
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
   experimental: {
